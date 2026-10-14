@@ -1,0 +1,465 @@
+/* ==========================================================
+   Web personal · Estilos
+   Móvil primero. Sin librerías ni fuentes externas.
+   ========================================================== */
+
+:root {
+  --fondo: #f4f7fa;
+  --fondo-tono: #e6ecf5;
+  --superficie: #ffffff;
+  --tinta: #17202b;
+  --tinta-suave: #4f5d6c;
+  --linea: #cdd6e2;
+  --acento: #2a4dff;
+  --acento-oscuro: #1b36c9;
+  --sobre-acento: #ffffff;
+
+  --fuente-titulos: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --fuente-texto: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --ancho: 68rem;
+  --espacio-seccion: clamp(3.5rem, 9vw, 7rem);
+  --radio: 0.5rem;
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--fondo);
+  color: var(--tinta);
+  font-family: var(--fuente-texto);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2.35rem, 8vw, 4.5rem);
+  max-width: 18ch;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--acento);
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--acento-oscuro);
+}
+
+:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.contenedor {
+  width: 100%;
+  max-width: var(--ancho);
+  margin-inline: auto;
+  padding-inline: max(1.25rem, env(safe-area-inset-left));
+}
+
+.salto {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  padding: 0.6rem 1rem;
+  background: var(--tinta);
+  color: #fff;
+  border-radius: var(--radio);
+}
+
+.salto:focus {
+  top: 1rem;
+}
+
+/* ---------- Cabecera ---------- */
+
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(244, 247, 250, 0.92);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linea);
+}
+
+.cabecera__interior {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 3.75rem;
+}
+
+.marca {
+  font-family: var(--fuente-titulos);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--tinta);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.marca:hover {
+  color: var(--tinta);
+}
+
+.menu {
+  display: flex;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 0.5rem 0;
+  color: var(--tinta-suave);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: var(--acento);
+}
+
+/* ---------- Secciones ---------- */
+
+.seccion {
+  padding-block: var(--espacio-seccion);
+}
+
+.seccion--tono {
+  background: var(--fondo-tono);
+}
+
+.seccion__intro {
+  margin-top: 0.75rem;
+  max-width: 48ch;
+  color: var(--tinta-suave);
+}
+
+/* ---------- Presentación ---------- */
+
+.presentacion {
+  padding-top: clamp(3rem, 10vw, 7rem);
+}
+
+.presentacion__rol {
+  margin-bottom: 1.25rem;
+  padding-left: 0.85rem;
+  border-left: 4px solid var(--acento);
+  color: var(--tinta-suave);
+  font-weight: 500;
+}
+
+.presentacion__texto {
+  margin-top: 1.5rem;
+  max-width: 46ch;
+  font-size: 1.15rem;
+  color: var(--tinta-suave);
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+/* ---------- Botones ---------- */
+
+.boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.7rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: var(--radio);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.boton--principal {
+  background: var(--acento);
+  color: var(--sobre-acento);
+}
+
+.boton--principal:hover {
+  background: var(--acento-oscuro);
+  color: var(--sobre-acento);
+}
+
+.boton--secundario {
+  border-color: var(--tinta);
+  color: var(--tinta);
+}
+
+.boton--secundario:hover {
+  background: var(--tinta);
+  color: #fff;
+}
+
+/* ---------- Sobre mí ---------- */
+
+.sobre {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.sobre__texto {
+  max-width: 60ch;
+}
+
+.sobre__texto p {
+  margin-top: 1.25rem;
+}
+
+.sobre__texto h2 + p {
+  margin-top: 1.5rem;
+}
+
+.datos {
+  margin: 0;
+  border-top: 1px solid var(--linea);
+}
+
+.datos__fila {
+  display: grid;
+  gap: 0.15rem;
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--linea);
+}
+
+.datos dt {
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.datos dd {
+  margin: 0;
+}
+
+/* ---------- Servicios ---------- */
+
+.servicios {
+  margin: 2.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 2px solid var(--tinta);
+}
+
+.servicio {
+  display: grid;
+  gap: 0.6rem;
+  padding-block: 1.75rem;
+  border-bottom: 1px solid var(--linea);
+}
+
+.servicio p {
+  max-width: 56ch;
+  color: var(--tinta-suave);
+}
+
+/* ---------- Contacto ---------- */
+
+.contacto {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.contacto__texto p {
+  margin-top: 1rem;
+  max-width: 40ch;
+  color: var(--tinta-suave);
+}
+
+.contacto__datos {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contacto__datos li + li {
+  margin-top: 0.4rem;
+}
+
+.contacto__datos a {
+  display: inline-block;
+  padding-block: 0.25rem;
+  font-weight: 600;
+}
+
+.formulario {
+  display: grid;
+  gap: 1.1rem;
+  padding: 1.5rem;
+  background: var(--superficie);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+}
+
+.campo {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.campo label {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.campo input,
+.campo textarea {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid #9aa8b9;
+  border-radius: var(--radio);
+  background: #fff;
+  color: var(--tinta);
+  font: inherit;
+  /* 16px mínimo evita el zoom automático en iPhone */
+  font-size: 1rem;
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+.campo input:focus-visible,
+.campo textarea:focus-visible {
+  outline: 3px solid rgba(42, 77, 255, 0.35);
+  outline-offset: 0;
+  border-color: var(--acento);
+}
+
+.formulario .boton {
+  justify-self: start;
+}
+
+/* ---------- Pie ---------- */
+
+.pie {
+  padding-block: 1.75rem calc(1.75rem + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--linea);
+  color: var(--tinta-suave);
+  font-size: 0.9rem;
+}
+
+.pie__interior {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+}
+
+/* ---------- Pantallas medianas y grandes ---------- */
+
+@media (min-width: 48rem) {
+  .menu {
+    gap: 2rem;
+  }
+
+  .sobre {
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .datos {
+    margin-top: 0.5rem;
+  }
+
+  .servicio {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+    align-items: baseline;
+  }
+
+  .contacto {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .formulario {
+    padding: 2rem;
+  }
+}
+
+/* ---------- Pantallas muy pequeñas ---------- */
+
+@media (max-width: 22rem) {
+  .menu {
+    gap: 0.8rem;
+  }
+
+  .menu a {
+    font-size: 0.875rem;
+  }
+
+  .marca {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- Preferencias del usuario ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .boton {
+    transition: none;
+  }
+}

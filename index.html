@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alfredo Salazar · Diseño y desarrollo web</title>
+  <meta name="description" content="Alfredo Salazar, diseñador y desarrollador web freelance. Creo sitios claros, rápidos y fáciles de usar para pequeños negocios y profesionales.">
+  <meta name="theme-color" content="#f4f7fa">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <a class="salto" href="#contenido">Saltar al contenido</a>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__interior">
+      <a class="marca" href="#inicio" aria-label="Alfredo Salazar, ir al inicio">Alfredo Salazar</a>
+      <nav aria-label="Principal">
+        <ul class="menu">
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- Presentación -->
+    <section class="seccion presentacion" id="inicio" aria-labelledby="titulo-inicio">
+      <div class="contenedor">
+        <p class="presentacion__rol">Diseñador y desarrollador web freelance</p>
+        <h1 id="titulo-inicio">Sitios web claros, rápidos y hechos a tu medida.</h1>
+        <p class="presentacion__texto">
+          Ayudo a pequeños negocios y profesionales a presentar lo que hacen con una web que se entiende a primera vista y funciona bien en cualquier pantalla.
+        </p>
+        <div class="acciones">
+          <a class="boton boton--principal" href="#contacto">Cuéntame tu proyecto</a>
+          <a class="boton boton--secundario" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre mí -->
+    <section class="seccion" id="sobre-mi" aria-labelledby="titulo-sobre-mi">
+      <div class="contenedor sobre">
+        <div class="sobre__texto">
+          <h2 id="titulo-sobre-mi">Sobre mí</h2>
+          <p>
+            Soy Alfredo, diseñador y desarrollador web. Llevo más de seis años trabajando con emprendedores, estudios y comercios locales para convertir sus ideas en sitios que se ven bien y cumplen su función.
+          </p>
+          <p>
+            Me gusta que el proceso sea sencillo: escucho lo que necesitas, te propongo una solución clara y te acompaño hasta que la web está publicada. Escribo el código a mano, sin plantillas pesadas, para que tu sitio cargue rápido y sea fácil de mantener.
+          </p>
+        </div>
+
+        <dl class="datos">
+          <div class="datos__fila">
+            <dt>Experiencia</dt>
+            <dd>Más de 6 años creando sitios web</dd>
+          </div>
+          <div class="datos__fila">
+            <dt>Herramientas</dt>
+            <dd>HTML, CSS, JavaScript y Figma</dd>
+          </div>
+          <div class="datos__fila">
+            <dt>Modalidad</dt>
+            <dd>Trabajo remoto con clientes de cualquier lugar</dd>
+          </div>
+          <div class="datos__fila">
+            <dt>Idiomas</dt>
+            <dd>Español e inglés</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Servicios -->
+    <section class="seccion seccion--tono" id="servicios" aria-labelledby="titulo-servicios">
+      <div class="contenedor">
+        <h2 id="titulo-servicios">Servicios</h2>
+        <p class="seccion__intro">Tres formas de trabajar juntos, según en qué punto esté tu proyecto.</p>
+
+        <ul class="servicios">
+          <li class="servicio">
+            <h3>Diseño de tu web</h3>
+            <p>Definimos la estructura, los textos y el aspecto visual de tu sitio. Recibes un diseño aprobado antes de escribir una sola línea de código.</p>
+          </li>
+          <li class="servicio">
+            <h3>Desarrollo a medida</h3>
+            <p>Construyo tu página con código limpio, adaptada a celular, tableta y computadora, y optimizada para que cargue rápido y se encuentre en buscadores.</p>
+          </li>
+          <li class="servicio">
+            <h3>Mejoras y mantenimiento</h3>
+            <p>Si ya tienes una web, la actualizo, corrijo errores y mejoro su velocidad. También puedo encargarme de los cambios mensuales de contenido.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="seccion" id="contacto" aria-labelledby="titulo-contacto">
+      <div class="contenedor contacto">
+        <div class="contacto__texto">
+          <h2 id="titulo-contacto">Contacto</h2>
+          <p>Escríbeme unas líneas sobre lo que necesitas y te respondo en un máximo de dos días laborables.</p>
+          <ul class="contacto__datos">
+            <li><a href="mailto:hola@tudominio.com">hola@tudominio.com</a></li>
+            <li><a href="https://wa.me/520000000000">WhatsApp: +52 000 000 0000</a></li>
+          </ul>
+        </div>
+
+        <!-- El formulario abre el programa de correo del visitante. -->
+        <form class="formulario" action="mailto:hola@tudominio.com" method="post" enctype="text/plain">
+          <div class="campo">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+          </div>
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" autocomplete="email" required>
+          </div>
+          <div class="campo">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+          </div>
+          <button class="boton boton--principal" type="submit">Enviar mensaje</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor pie__interior">
+      <p>© 2026 Alfredo Salazar. Todos los derechos reservados.</p>
+      <a href="#inicio">Volver arriba</a>
+    </div>
+  </footer>
+</body>
+</html>
